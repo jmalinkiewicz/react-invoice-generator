@@ -4,6 +4,9 @@
 
 @layer components {
   .text-input {
-    @apply w-full mt-2 p-2 border-[1px] border-gray-300;
+    @apply w-full mt-2 p-2 border-[1px] border-gray-300 hover:border-gray-400 bg-white;
+  }
+  .option {
+    @apply w-full bg-white;
   }
 }
