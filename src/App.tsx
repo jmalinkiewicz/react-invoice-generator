@@ -1,8 +1,8 @@
 function App() {
   return (
     <>
-      <div className="flex h-full">
-        <div className="w-1/2 h-full overflow-y-scroll bg-neutral-50">
+      <div className="h-full">
+        <div className="max-w-screen-lg m-auto h-full bg-neutral-50">
           <main className="py-8 px-12">
             <h1 className="text-3xl font-bold">Invoicer</h1>
             <p className="text-sm text-gray-600">
@@ -119,11 +119,28 @@ function App() {
               </div>
             </div>
             <div className="mt-12">
-              <h2 className="text-xl font-semibold">Invoice Contents</h2>
+              <h2 className="text-xl font-semibold">Invoice Details</h2>
+              <div className="mt-4 flex gap-6">
+                <label className="w-full">
+                  Payment Due Date
+                  <input
+                    placeholder="+48 123 456 789"
+                    type="date"
+                    className="text-input"
+                  />
+                </label>
+                <label className="w-full">
+                  Bank Account
+                  <input
+                    placeholder="customer@example.com"
+                    type="text"
+                    className="text-input"
+                  />
+                </label>
+              </div>
             </div>
           </main>
         </div>
-        <div className="w-1/2 h-full bg-red-100">x</div>
       </div>
     </>
   );
