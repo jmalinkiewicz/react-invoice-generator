@@ -25,7 +25,7 @@ type InvoiceState = {
   invoiceItems: {
     items: {
       quantity: number;
-      description: number;
+      description: string;
       unitPrice: number;
       taxRate: number;
     }[];
