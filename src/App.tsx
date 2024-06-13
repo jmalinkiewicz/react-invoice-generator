@@ -1,5 +1,6 @@
 import BuyerForm from "./components/forms/buyerForm";
 import DetailsForm from "./components/forms/detailsForm";
+import ItemsForm from "./components/forms/itemsForm";
 import SellerForm from "./components/forms/sellerForm";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <SellerForm />
             <BuyerForm />
             <DetailsForm />
+            <ItemsForm />
           </main>
         </div>
       </div>
