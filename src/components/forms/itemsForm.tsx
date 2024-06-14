@@ -20,6 +20,13 @@ export default function ItemsForm() {
     PLN: "zł",
   }[currency];
 
+  const total =
+    (Number(quantity) *
+      Math.floor(
+        (Number(unitPrice) + Number(unitPrice) * (Number(taxRate) / 100)) * 100
+      )) /
+    100;
+
   function handleAddItem() {
     if (!description || !quantity || !unitPrice || !taxRate) {
       return;
@@ -53,6 +60,7 @@ export default function ItemsForm() {
             <div className="w-1/12">Quantity</div>
             <div className="w-1/12 ">Unit Price</div>
             <div className="w-1/12 ">Tax Rate</div>
+            <div className="w-1/12 ">Total</div>
             <div className="w-1/12 "></div>
           </div>
           <div className="flex justify-between">
@@ -97,6 +105,8 @@ export default function ItemsForm() {
                 type="number"
                 className="w-full p-2 border-[1px] border-gray-300 hover:border-gray-400"
                 value={taxRate}
+                max={100}
+                min={0}
                 onChange={(e) => {
                   if (e.target.value === "" || Number(e.target.value) < 0) {
                     setTaxRate("");
@@ -105,6 +115,12 @@ export default function ItemsForm() {
                   }
                 }}
               />
+            </div>
+            <div className="w-1/12 flex items-center">
+              <span>
+                {currencyChar}
+                {total}
+              </span>
             </div>
             <div className="w-1/12">
               <button
@@ -121,7 +137,7 @@ export default function ItemsForm() {
             No items added yet
           </div>
         )}
-        <div className="flex flex-col mt-6">
+        <div className="flex flex-col gap-1 mt-6">
           {items.items.map((item, index) => {
             return (
               <div className="flex justify-between bg-slate-200 rounded py-1 px font-medium">
@@ -137,6 +153,16 @@ export default function ItemsForm() {
                 </div>
                 <div className="w-1/12 grid place-items-center">
                   {item.taxRate}%
+                </div>
+                <div className="w-1/12 flex items-center">
+                  {currencyChar}
+                  {(Number(item.quantity) *
+                    Math.floor(
+                      (Number(item.unitPrice) +
+                        Number(item.unitPrice) * (Number(item.taxRate) / 100)) *
+                        100
+                    )) /
+                    100}
                 </div>
                 <div className="w-1/12">
                   <button
