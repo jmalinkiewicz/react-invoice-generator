@@ -2,7 +2,7 @@ import BuyerForm from "./components/forms/buyerForm";
 import DetailsForm from "./components/forms/detailsForm";
 import ItemsForm from "./components/forms/itemsForm";
 import SellerForm from "./components/forms/sellerForm";
-
+import { DownloadPDF } from "./components/pdfGenerator";
 import { useAppSelector } from "./hooks";
 
 function App() {
@@ -97,6 +97,7 @@ function App() {
                   </h2>
                 </div>
               </div>
+              <DownloadPDF />
             </div>
           </main>
         </div>

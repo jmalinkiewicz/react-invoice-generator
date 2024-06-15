@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type InvoiceState = {
+export type InvoiceState = {
   sellerInfo: {
     seller: string;
     address: string;
