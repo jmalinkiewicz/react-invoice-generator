@@ -97,7 +97,9 @@ function App() {
                   </h2>
                 </div>
               </div>
-              <DownloadPDF />
+              <div className="mt-8">
+                <DownloadPDF />
+              </div>
             </div>
           </main>
         </div>

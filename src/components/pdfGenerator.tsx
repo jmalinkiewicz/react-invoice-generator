@@ -1,6 +1,4 @@
-import React from "react";
 import {
-  PDFViewer,
   Document,
   Page,
   Text,
@@ -289,12 +287,11 @@ export const DownloadPDF = () => {
   return (
     <div>
       <PDFDownloadLink
+        className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
         document={<MyDocument invoice={invoice} />}
         fileName="example.pdf"
       >
-        {({ blob, url, loading, error }) =>
-          loading ? "Loading document..." : "Download now!"
-        }
+        {({ loading }) => (loading ? "Loading document..." : "Generate PDF")}
       </PDFDownloadLink>
     </div>
   );
