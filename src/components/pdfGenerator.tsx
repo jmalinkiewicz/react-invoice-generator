@@ -104,9 +104,9 @@ const styles = StyleSheet.create({
   totalText: {
     fontSize: 16,
   },
-  viewer: {
-    width: window.innerWidth, // Adjust the width to your preference
-    height: window.innerHeight, // Adjust the height to your preference
+  currencyCharText: {
+    position: "relative",
+    right: 4,
   },
 });
 
@@ -255,24 +255,24 @@ const MyDocument = ({ invoice }: { invoice: InvoiceState }) => {
           <View style={styles.summaryNumbers}>
             <View style={[styles.spaceBetweenText, styles.subTotalText]}>
               <Text>Subtotal:</Text>
-              <Text>
-                {currencyChar}
-                {subTotal}
-              </Text>
+              <View>
+                <Text style={styles.currencyCharText}>{currencyChar}</Text>
+                <Text>{subTotal}</Text>
+              </View>
             </View>
             <View style={[styles.spaceBetweenText, styles.totalTaxText]}>
               <Text>Total Tax:</Text>
-              <Text>
-                {currencyChar}
-                {totalTax}
-              </Text>
+              <View>
+                <Text style={styles.currencyCharText}>{currencyChar}</Text>
+                <Text>{totalTax}</Text>
+              </View>
             </View>
             <View style={[styles.spaceBetweenText, styles.totalText]}>
               <Text>Total Gross:</Text>
-              <Text>
-                {currencyChar}
-                {total}
-              </Text>
+              <View>
+                <Text style={styles.currencyCharText}>{currencyChar}</Text>
+                <Text>{total}</Text>
+              </View>
             </View>
           </View>
         </View>
